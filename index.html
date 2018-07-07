@@ -1,0 +1,43 @@
+ //JavaScript.info: 2.14 Fuctions: http://javascript.info/function-basics
+ 
+ //Parameters: http://javascript.info/function-basics#parameters
+ 
+ //Passing arguments to function. How do I pass information to the function without actually
+               //filling it in, like they have in the function call below?
+                
+			    function showMessage(from, text) { // arguments: from, text
+				  console.log(from + ': ' + text);
+				}
+
+			    showMessage('Ann', 'Hello!'); // Ann: Hello! (*) << we are passing values to function for practice. users don't have that ability. 
+			    showMessage('Ann', "What's up?"); // Ann: What's up? (**)
+               
+			    
+			    
+			    //Here’s one more example: we have a variable 'from' and pass it to the function. Please note: the function changes from, but the change is not seen outside, because a function always gets a copy of the value:
+
+				 function showMessage(from, text) {
+
+					from = '*' + from + '*'; // make "from" look nicer
+
+					console.log( from + ': ' + text );
+				}
+
+					let from = "Ann";
+
+					showMessage(from, "Hello"); // *Ann*: Hello
+
+				// the value of "from" is the same, the function modified a local copy
+				console.log( from ); // Ann
+			    
+			   
+			   function checkAge(age) {
+				  if (age > 18) {
+				  	console.log('age is greater than 18');
+				    return true;
+				  } else {
+				    // ...
+				    return confirm('Did parents allow you?');
+				  }
+				}
+				checkAge(10);
